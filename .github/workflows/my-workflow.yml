@@ -1,16 +1,14 @@
-name: Docker Actions
+name: "Docker Actions"
 
 on: [push]
 
 jobs:
   action:
-    runs-on: ubuntu-latest
-
+    runs-on: "ubuntu-latest"
     steps:
       - uses: actions/checkout@v1
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+
+      - name: "hello-action"
+        uses: ./.github/actions/hello-world
+        with:
+          firstGreeting: "Learning WatchMan"
